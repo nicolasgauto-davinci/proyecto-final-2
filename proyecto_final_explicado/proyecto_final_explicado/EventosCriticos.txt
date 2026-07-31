@@ -1,0 +1,36 @@
+Se generó el consejo Tu corazón estallara de alegría con la llegada de buenas noticias. al usuario nico. Fecha del suceso: 29-06-2026 18:57:19
+Se generó el consejo No todo el mundo puede recibir las mismas cosas. Se practico. al usuario nico. Fecha del suceso: 29-06-2026 18:57:43
+Se generó el consejo 'Hoy compartirás las horas mas tiernas de tu vida con alguien muy amado.' al usuario 'nico'. Fecha del suceso: 29-06-2026 18:58:23
+El usuario 'fati' inicio sesión. Fecha del suceso: 30-06-2026 00:07:31
+El usuario 'fati' inicio sesión. Fecha del suceso: 29-06-2026 19:08:32
+Se intento iniciar sesión con el siguiente dato de Usuario inexistente: 'asdfg'. Fecha del suceso: 29-06-2026 19:14:48
+Se intento iniciar sesión con los siguientes datos: Usuario: fati. Clave: asdfg. Fecha del suceso: 29-06-2026 19:14:59
+Se intento iniciar sesión en el usuario 'fati' con una clave incorrecta 'asdfgj'. Fecha del suceso: 29-06-2026 19:16:13
+Se genero correctamente el nuevo usuario 'santi'. Fecha del suceso: 29-06-2026 19:26:44
+Se genero correctamente el nuevo usuario 'hilen'. Fecha del suceso: 29-06-2026 19:54:47
+Se genero correctamente el nuevo usuario 'admin'. Fecha del suceso: 29-06-2026 20:09:02
+El usuario 'admin' inicio sesión. Fecha del suceso: 29-06-2026 20:09:07
+El usuario 'admin' inicio sesión. Fecha del suceso: 29-06-2026 20:14:21
+El usuario 'admin' inicio sesión. Fecha del suceso: 29-06-2026 20:17:37
+Se generó el consejo 'Tendrás entera satisfacción al final de esta temporada. Prepárate.' al usuario 'admin'. Fecha del suceso: 29-06-2026 20:20:39
+El usuario 'nico' inicio sesión. Fecha del suceso: 01-07-2026 14:54:32
+Se generó el consejo 'Eres una persona a la que le gusta triunfar en la vida.' al usuario 'nico'. Fecha del suceso: 01-07-2026 14:54:36
+Se generó el consejo 'Seras promovido en tu trabajo debido a tus logros y capacidades.' al usuario 'nico'. Fecha del suceso: 01-07-2026 14:56:19
+Se generó el consejo 'Te aguarda una larga y feliz vida.' al usuario 'nico'. Fecha del suceso: 01-07-2026 14:56:33
+Se generó el consejo 'Concéntrate en lo que quieres lograr y ganaras. No lo olvides.' al usuario 'nico'. Fecha del suceso: 01-07-2026 14:56:44
+El usuario 'admin' inicio sesión. Fecha del suceso: 01-07-2026 14:57:06
+Se generó el consejo 'Hoy tendrás un día de increíble alegría y brillara tu sentido del humor.' al usuario 'admin'. Fecha del suceso: 01-07-2026 14:57:16
+Se genero correctamente el nuevo usuario 'juan'. Fecha del suceso: 01-07-2026 14:57:44
+El usuario 'juan' inicio sesión. Fecha del suceso: 01-07-2026 14:57:51
+Se generó el consejo 'Te sentirás feliz como un niño y veras al mundo con sus ojos.' al usuario 'juan'. Fecha del suceso: 01-07-2026 14:57:52
+Se intento iniciar sesión en el usuario 'fati' con una clave incorrecta 'juan'. Fecha del suceso: 01-07-2026 14:57:58
+Se intento iniciar sesión con el siguiente dato de Usuario inexistente: 'kasd'. Fecha del suceso: 01-07-2026 14:58:06
+El usuario 'admin' inicio sesión. Fecha del suceso: 31-07-2026 16:54:40
+Se generó el consejo 'No olvides que un amigo es un regalo que te das a ti mismo.' al usuario 'admin'. Fecha del suceso: 31-07-2026 16:55:16
+El usuario 'nico' inicio sesión. Fecha del suceso: 31-07-2026 16:59:46
+El usuario 'admin' inicio sesión. Fecha del suceso: 31-07-2026 17:54:54
+El usuario 'admin' inicio sesión. Fecha del suceso: 31-07-2026 17:55:07
+Se generó el consejo 'Se te cumplirá un hermoso sueño y veras como otros sueños se hacen realidad.' al usuario 'admin'. Fecha del suceso: 31-07-2026 17:55:28
+El usuario 'admin' inicio sesión. Fecha del suceso: 31-07-2026 17:56:12
+El usuario 'admin' inicio sesión. Fecha del suceso: 31-07-2026 17:59:47
+El usuario 'nico' inicio sesión. Fecha del suceso: 31-07-2026 18:53:55

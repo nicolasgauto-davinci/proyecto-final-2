@@ -34,12 +34,12 @@ if (!isset($_SESSION['usuario'])){
         <a href="./logout.php">Cerrar sesión</a>
         <?php
         if($_SESSION['usuario'] === 'admin'){
-            echo "<a href='../admin.php'>Admin</a>";
+            echo "<a href='./admin/admin.php'>Admin</a>";
         }
         ?>
     </header>
     <main>
-        //ESTO ES UN COPYPASTE DE ADMIN, CORREGIR PARA QUE TRAIGA SOLO LOS DEL USUARIO EN CUESTION
+        ESTO ES UN COPYPASTE DE ADMIN, CORREGIR PARA QUE TRAIGA SOLO LOS DEL USUARIO EN CUESTION
         <h1>Historial de frases obtenidas</h1>
         <?php
         $archivo = '../EventosCriticos.txt';

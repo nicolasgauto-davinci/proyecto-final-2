@@ -27,7 +27,7 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] !== 'admin') {
     <main>
         <h1>Registro de Eventos Criticos</h1>
         <?php
-        $archivo = '/EventosCriticos.txt';
+        $archivo = '../../EventosCriticos.txt';
         $modo = "r";
 
         if(file_exists($archivo)){

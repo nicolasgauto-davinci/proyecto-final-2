@@ -19,19 +19,19 @@ if (!isset($_SESSION['usuario'])){
 
 require_once "../app/config/conexion.php";
 
-$archivoJson = file_get_contents('frases.json');
-$listadoFrases = json_decode($archivoJson, true);
-
-$cantFrases = count($listadoFrases);
-$numAlAzar = rand(0, $cantFrases - 1);
-$consejo = $listadoFrases[$numAlAzar];
+$buscarFrase = "SELECT id, mensaje FROM frases ORDER BY RAND() LIMIT 1";
+$resultadoFrase = $mysqli->query($buscarFrase);
+$array = $resultadoFrase->fetch_assoc();
+$consejo = $array['mensaje'];
+$mensaje_id = $array['id'];
 
 $fechaActual = date('d-m-Y H:i:s');
 
-$stmt = $mysqli->prepare("INSERT INTO historial_galletas (usuario, mensaje) VALUES(?, ?)");
-$stmt->bind_param("ss", $_SESSION['usuario'], $consejo);
+$stmt = $mysqli->prepare("INSERT INTO historial_galletas (usuario_id, mensaje_id) VALUES(?, ?)");
+$stmt->bind_param("ii", $_SESSION['usuario_id'], $mensaje_id);
 $stmt->execute();
 $stmt->close();
+
 
 //Generacion del archivo para registrar los eventos
 $archivo = '../EventosCriticos.txt';
@@ -64,6 +64,7 @@ if($manejador){
 <body>
     <header>
         <a href="./home.php">Inicio</a>
+        <a href="./historial.php">Historial</a>
         <a href="./logout.php">Cerrar sesión</a>
         <?php
         if($_SESSION['usuario'] === 'admin'){

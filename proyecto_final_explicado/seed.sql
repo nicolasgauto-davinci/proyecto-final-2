@@ -9,24 +9,25 @@ CREATE TABLE IF NOT EXISTS usuarios(
     clave VARCHAR(250) NOT NULL,
     fecha_nacimiento DATE NOT NULL,
     fecha_alta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    rol VARCHAR(250) NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS historial_galletas(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
-    mensaje VARCHAR(500) NOT NULL,
-    fecha_apertura TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    rol VARCHAR(250) NOT NULL DEFAULT 'Client'
 );
 
 CREATE TABLE IF NOT EXISTS frases(
     id INT AUTO_INCREMENT PRIMARY KEY,
     mensaje VARCHAR(500) NOT NULL
-)
+);
+
+CREATE TABLE IF NOT EXISTS historial_galletas(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    mensaje_id INT NOT NULL,
+    fecha_apertura TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (mensaje_id) REFERENCES frases(id)
+);
 
 INSERT INTO usuarios(email, usuario, clave, fecha_nacimiento, rol)
-VALUES ('admin@davinci.edu.ar', 'admin', 'Admin1!', 30-05-2002, 'admin');
+VALUES ('admin@davinci.edu.ar', 'admin', 'Admin1!', 30-05-2002, 'Admin');
 
 INSERT INTO frases(mensaje)
 VALUES

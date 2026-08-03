@@ -64,8 +64,10 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 
 if($resultado->num_rows > 0){
+    $array = $resultado->fetch_assoc();
     session_regenerate_id(true);
     $_SESSION['usuario'] = $usuarioLogin;
+    $_SESSION['usuario_id'] = $array['id'];
 
     //Cada vez que un usuario inicie sesión de forma correcta, se va a guardar este suceso
     $manejador = fopen($archivo, $modo);

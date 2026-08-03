@@ -41,6 +41,13 @@ if (!isset($_SESSION['usuario'])){
     </header>
     
     <main>
+        <?php
+        if (isset($_GET['error'])){
+            if($_GET['error'] === '7'){
+                echo "<p>No tiene acceso para acceder al admin</p>";
+            }
+        }
+        ?>
         <h1>GALLETA CHINA DE LA FORTUNA</h1>
         <article>
             <p>¿Necesitas de un sabio consejo o de un levantón?¡Obtén la sabiduría de la galleta china de la fortuna, sin las calorias!</p>

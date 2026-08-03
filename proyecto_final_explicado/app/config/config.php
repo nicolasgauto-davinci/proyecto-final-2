@@ -3,6 +3,6 @@
 $host= "localhost";
 $user = "root";
 $password = "";
-$dbname = "sitio_galleta";
+$dbname = "sitio_galleta_final";
 
 ?>

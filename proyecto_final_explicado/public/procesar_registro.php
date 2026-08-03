@@ -70,7 +70,7 @@ if($resultado->num_rows > 0){
 $stmt->close();
 
 //Una vez que verifique todo, guardo los nuevos datos
-$stmt = $mysqli->prepare("INSERT INTO usuarios (email, usuario, clave, fecha_nacimiento, rol) VALUES (?,?,?,?,'usuario')");
+$stmt = $mysqli->prepare("INSERT INTO usuarios (email, usuario, clave, fecha_nacimiento) VALUES (?,?,?,?)");
 $stmt->bind_param("ssss", $email, $usuario, $clave, $fechaNac);
 $stmt->execute();
 $stmt->close();

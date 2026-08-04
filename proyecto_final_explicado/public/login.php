@@ -5,6 +5,7 @@ session_start();
 // Si no hay sesión, pero SI hay una cookie de "recordarme", restauramos la sesión
 if (!isset($_SESSION['usuario']) && isset($_COOKIE['usuario'])) {
     $_SESSION['usuario'] = $_COOKIE['usuario'];
+    $_SESSION['usuario_id'] = $_COOKIE['usuario_id'];
 }
 
 // Si ya hay sesión (ya sea porque estaba viva o porque la restauró la cookie), va al home

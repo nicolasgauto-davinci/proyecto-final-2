@@ -16,6 +16,20 @@ if (!isset($_SESSION['usuario'])){
     }
 }   
 
+require_once "../app/config/conexion.php";
+
+$stmt = $mysqli->prepare(
+            "SELECT h.fecha_apertura, f.mensaje
+            FROM historial_galletas h 
+            JOIN usuarios u ON h.usuario_id = u.id
+            JOIN frases f ON h.mensaje_id = f.id
+            WHERE h.usuario_id = ?
+            ORDER BY h.fecha_apertura ASC");
+$stmt->bind_param("i", $_SESSION['usuario_id']);
+$stmt->execute();
+$historial = $stmt->get_result();
+$stmt->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -39,28 +53,16 @@ if (!isset($_SESSION['usuario'])){
         ?>
     </header>
     <main>
-        ESTO ES UN COPYPASTE DE ADMIN, CORREGIR PARA QUE TRAIGA SOLO LOS DEL USUARIO EN CUESTION
         <h1>Historial de frases obtenidas</h1>
         <?php
-        $archivo = '../EventosCriticos.txt';
-        $modo = "r";
-
-        if(file_exists($archivo)){
-            $manejador = fopen($archivo, $modo);
-            if($manejador){
-                while(!feof($manejador)){
-                    $leer = fgets($manejador);
-                    if($leer){
-                        echo "<p>" . htmlspecialchars($leer) . "</p>";
-                    }
-                }
-                fclose($manejador);
+        if ($historial->num_rows > 0){
+            while($array = $historial->fetch_assoc()){
+                echo "<p>" . htmlspecialchars($array['fecha_apertura']) . " - " . htmlspecialchars($array['mensaje']) . "</p>";
             }
         }
         else{
-            echo "<p>Todavia no hay actividad de tu usuario registrada en el sitio</p>";
+            echo "<p>No se registra actividad de su ususario todavia</p>";
         }
-
         ?>
     </main>
 </body>

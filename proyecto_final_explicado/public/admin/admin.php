@@ -25,28 +25,9 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] !== 'admin') {
         <a href="./admin.php">Admin</a>
     </header>
     <main>
-        <h1>Registro de Eventos Criticos</h1>
-        <?php
-        $archivo = '../../EventosCriticos.txt';
-        $modo = "r";
-
-        if(file_exists($archivo)){
-            $manejador = fopen($archivo, $modo);
-            if($manejador){
-                while(!feof($manejador)){
-                    $leer = fgets($manejador);
-                    if($leer){
-                        echo "<p>" . htmlspecialchars($leer) . "</p>";
-                    }
-                }
-                fclose($manejador);
-            }
-        }
-        else{
-            echo "<p>Todavia no hay actividad registrada en el sitio</p>";
-        }
-
-        ?>
+        <h1>Panel ADMIN</h1>
+        <a href="./eventos_criticos.php">Eventos Criticos</a>
+        <a href="./crud_frases.php">CRUD Frases</a>
     </main>
 </body>
 </html>

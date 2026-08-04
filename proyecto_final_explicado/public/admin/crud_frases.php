@@ -36,7 +36,9 @@ require_once "../../app/config/conexion.php";
           $stmt->close();
           while($array = $historial->fetch_assoc()){
             echo "<li>ID #" . htmlspecialchars($array['id']) . " - " . htmlspecialchars($array['mensaje']) . 
-              " <button>Editar</button> <button>Eliminar</button>" . "</li>";
+              " <button href='./editar_frase.php?id=" . $array['id'] . "'>Editar</button>
+                <button onclick=\"if(confirm('Estas seguro de que queres eliminar esta frase?)){ window.location.href='eliminar_frase.php?id= " . $array['id'] . "}\">Eliminar</button>" .
+                "</li>";
           }
         ?>
       </ul>

@@ -43,6 +43,24 @@ if($usuario === '' || $clave === '' || $email === '' || $fechaNac === ''){
     exit();
 }
 
+$regexEmail = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+if(!preg_match($regexEmail, $email)){
+    header("Location: register.php?error=8");
+    exit();
+}
+
+$regexClave = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/";
+if(!preg_match($regexClave, $clave)) {
+    header("Location: register.php?error=9");
+    exit();
+}
+
+$regexUsuario = "^[a-z0-9_-]{3,15}$";
+if(!preg_match($regexUsuario, $usuario)){
+    header("Location: register.php?error=10");
+    exit();
+}
+
 //Verifico que no exista ya un usuario con el mismo nombre de usuario
 $stmt = $mysqli->prepare("SELECT id FROM usuarios WHERE usuario = ?");
 $stmt->bind_param("s", $usuario);

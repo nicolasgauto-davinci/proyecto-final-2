@@ -38,6 +38,15 @@ if (isset($_GET['error'])) {
         else if ($_GET['error'] === '6'){
             echo "<p style='color:red;'>El email ya esta en uso, elegi otro</p>";
         }
+        else if ($_GET['error'] === '8'){
+            echo "<p style='color:red;'>El email ingresado es invalido</p>";
+        }
+        else if ($_GET['error'] === '9'){
+            echo "<p style='color:red;'>La contraseña ingresada debe tener minimo 8 caracteres, una mayuscula, una minuscula, un numero y un caracter especial</p>";
+        }
+        else if ($_GET['error'] === '10'){
+            echo "<p style='color:red;'>El nombre de usuario es invalido</p>";
+        }
     }
 
 ?>

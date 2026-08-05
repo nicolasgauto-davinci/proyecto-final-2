@@ -7,6 +7,10 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] !== 'admin') {
     exit();
 }
 
+//Generacion del archivo para registrar los eventos
+$archivo = '../../EventosCriticos.txt';
+$modo = "a";
+
 require_once "../../app/config/conexion.php";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idFrase'])){
@@ -15,6 +19,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idFrase'])){
     $stmt->bind_param("i", $idEliminar);
     $stmt->execute();
     $stmt->close();
+
+    $fechaActual = date('d-m-Y H:i:s');
+    $manejador = fopen($archivo, $modo);
+
+    if($manejador){
+        $contenido= "Se elimino la frase con id #" . $idEliminar . "\n";
+        fwrite($manejador, $contenido);
+        fclose($manejador);
+    }
+
     header("Location: crud_frases.php");
     exit();
 }

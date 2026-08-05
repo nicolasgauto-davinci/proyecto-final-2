@@ -53,6 +53,12 @@ if (isset($_GET['error'])) {
     else if($_GET['error'] === '5'){
         echo "<p style='color:red;'>El usuario ingresado no existe</p>";
     }
+    else if ($_GET['error'] === '11'){
+        echo "<p style='color:red;'>El nombre de usuario es invalido</p>";
+    }
+    else if ($_GET['error'] === '12'){
+        echo "<p style='color:red;'>La contraseña ingresada debe tener minimo 8 caracteres, una mayuscula, una minuscula, un numero y un caracter especial</p>";
+    }
 }
 ?>
 

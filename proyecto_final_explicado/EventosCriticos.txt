@@ -14,3 +14,9 @@ Se generó el consejo 'Seras promovido en tu trabajo debido a tus logros y capac
 Se generó el consejo 'Hoy es el momento de explorar: no temas.' al usuario 'santi'. Fecha del suceso: 03-08-2026 20:47:22
 Se generó el consejo 'Vivirás tu vejez con comodidades y riquezas materiales.' al usuario 'santi'. Fecha del suceso: 03-08-2026 20:47:24
 El usuario 'admin' inicio sesión. Fecha del suceso: 03-08-2026 20:50:16
+Se genero correctamente el nuevo usuario 'nico'. Fecha del suceso: 05-08-2026 15:19:50
+El usuario 'nico' inicio sesión. Fecha del suceso: 05-08-2026 15:20:02
+Se generó el consejo 'No todo el mundo puede recibir las mismas cosas. Se practico.' al usuario 'nico'. Fecha del suceso: 05-08-2026 15:20:04
+Se intento iniciar sesión en el usuario 'admin' con una clave incorrecta 'Admin1234°'. Fecha del suceso: 05-08-2026 15:20:19
+Se intento iniciar sesión en el usuario 'admin' con una clave incorrecta 'Admin123!'. Fecha del suceso: 05-08-2026 15:20:25
+El usuario 'admin' inicio sesión. Fecha del suceso: 05-08-2026 15:20:36

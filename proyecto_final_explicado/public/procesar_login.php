@@ -33,6 +33,18 @@ if ($usuarioLogin === '' || $claveLogin === '') {
     exit();
 }
 
+$regexUsuario = "^[a-z0-9_-]{3,15}$";
+if(!preg_match($regexUsuario, $usuarioLogin)){
+    header("Location: login.php?error=11");
+    exit();
+}
+
+$regexClave = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/";
+if(!preg_match($regexClave, $claveLogin)) {
+    header("Location: register.php?error=12");
+    exit();
+}
+
 $fechaActual = date('d-m-Y H:i:s');
 //Verifico que el usuario exista en la base de datos
 $stmt = $mysqli->prepare("SELECT id FROM usuarios WHERE usuario = ?");

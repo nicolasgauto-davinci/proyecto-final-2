@@ -15,6 +15,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idFrase'])){
     $stmt->bind_param("i", $idEliminar);
     $stmt->execute();
     $stmt->close();
+    header("Location: crud_frases.php");
+    exit();
 }
 else{
     header("Location: crud_frases.php");

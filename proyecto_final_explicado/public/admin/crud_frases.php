@@ -35,10 +35,19 @@ require_once "../../app/config/conexion.php";
           $historial = $stmt->get_result();
           $stmt->close();
           while($array = $historial->fetch_assoc()){
-            echo "<li>ID #" . htmlspecialchars($array['id']) . " - " . htmlspecialchars($array['mensaje']) . 
-              " <button href='./editar_frase.php?id=" . $array['id'] . "'>Editar</button>
-                <button onclick=\"if(confirm('Estas seguro de que queres eliminar esta frase?)){ window.location.href='eliminar_frase.php?id= " . $array['id'] . "}\">Eliminar</button>" .
-                "</li>";
+            $id = $array['id'];
+            /*echo "<li>ID #" . htmlspecialchars((string)$id) . " - " . htmlspecialchars($array['mensaje']) . 
+                " <a href='./editar_frase.php?id=" . $id . "'><button type='button'>Editar</button></a>" . "</li>";*/
+            echo "<li>ID #" . htmlspecialchars((string)$id) . " - " . htmlspecialchars($array['mensaje']) . 
+                    "<form action='./editar_frase.php?id=" . $id . "' method='POST'>
+                        <input type='hidden' name='idFrase' value='" . $id . "'>
+                        <button type='submit'>Editar</button>
+                    </form>
+                    <form action='./eliminar_frase.php?id=" . $id . "' method='POST'>
+                        <input type='hidden' name='idFrase' value='" . $id . "'>
+                        <button type='submit' onclick=\"return confirm('Estas seguro de querer eliminar esta frase?');\">Eliminar</button>
+                    </form>
+                </li>";
           }
         ?>
       </ul>

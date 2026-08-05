@@ -28,6 +28,11 @@ require_once "../../app/config/conexion.php";
     </header>
     <main>
       <h1>CRUD Frases</h1>
+      <form action="./crear_frase.php" method="POST">
+        <label>Nueva frase</label>
+        <input type="text" name="nuevaFrase" required>
+        <button type="submit">Enviar</button>
+      </form>
       <ul>
         <?php 
           $stmt = $mysqli->prepare("SELECT id, mensaje FROM frases ORDER BY id ASC");

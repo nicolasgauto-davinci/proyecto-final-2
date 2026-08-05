@@ -10,9 +10,11 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] !== 'admin') {
 require_once "../../app/config/conexion.php";
 
 //Esto no se ejecuta a menos que venga por el link y tenga el idFrase
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idFrase'])){
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idFrase'], $_POST['fraseActualizada'])){
+
     $idEditar = (int)$_POST['idFrase'];
     $fraseActualizada = $_POST['fraseActualizada'];
+
     $stmt = $mysqli->prepare("UPDATE frases SET mensaje = ? WHERE id = ?");
     $stmt->bind_param("si", $fraseActualizada, $idEditar);
     //Este stmt no se ejecuta hasta que tenga el fraseActualizada, es decir hasta q complete el form dentro de la misma pagina
@@ -24,13 +26,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idFrase'])){
     $stmt->close();
 }
 
-//Si el usuario intenta ingresar por el link, lo redirige al crud
-if(!isset($_GET['id'])){
+//Creo un id con valor 0 (osea no existe) y trato de sacar el id de post o get
+$id = 0;
+
+if (isset($_POST['id_frase'])) {
+    $id = (int)$_POST['id_frase'];
+}
+elseif (isset($_POST['id'])) {
+    $id = (int)$_POST['id'];
+}
+elseif (isset($_GET['id'])) {
+    $id = (int)$_GET['id'];
+}
+//Si sigue siendo 0, devuelve al crud
+if($id === 0){
     header("Location: crud_frases.php");
     exit();
 }
 
-$id = (int)$_GET['id'];
 $fraseSeleccionada = "";
 
 $stmt = $mysqli->prepare("SELECT mensaje FROM frases WHERE id = ?");
@@ -47,6 +60,8 @@ else{
     header("Location: crud_frases.php");
     exit();
 }
+
+
 
 ?>
 
